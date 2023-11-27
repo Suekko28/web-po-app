@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\pengajuan;
 use Illuminate\Http\Request;
 
 class PenawaranController extends Controller
@@ -11,7 +12,8 @@ class PenawaranController extends Controller
      */
     public function index()
     {
-        //
+        $data = pengajuan::orderby("id", "desc")->paginate(10);
+        return view("admin.pengajuan", compact("data"));
     }
 
     /**
@@ -19,15 +21,38 @@ class PenawaranController extends Controller
      */
     public function create()
     {
-        //
+        $data = new pengajuan(); // Create a new instance of the model
+        return view("admin.form", compact("data"));
     }
+    
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'peralatan' => 'required',
+            'qty' => 'required',
+            'unit' => 'required',
+            'harga' => 'nullable'
+
+        ], [
+            'peralatan.required' => 'Peralatan wajib diisi',
+            'qty.required' => 'QTY wajib diisi',
+            'unit.required' => 'Unit wajib diisi'
+        ]);
+
+        $data = [
+            'peralatan' => $request->peralatan,
+            'qty' => $request->qty,
+            'unit' => $request->unit,
+            'harga' => $request->harga,
+
+        ];
+
+        pengajuan::create($data);
+        return redirect()->to('/admin/pengajual')->with('success', 'Berhasil Menambah Pengajuan');
     }
 
     /**
@@ -43,7 +68,8 @@ class PenawaranController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = pengajuan::where('id', $id)->first();
+        return view('/admin/pengajuan')->with('data', $data);
     }
 
     /**
@@ -51,7 +77,30 @@ class PenawaranController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'peralatan' => 'required',
+            'qty' => 'required',
+            'unit' => 'required',
+            'harga' => 'nullable'
+
+            
+        ], [
+            'peralatan.required' => 'Peralatan wajib diisi',
+            'qty.required' => 'QTY wajib diisi',
+            'unit.required' => 'Unit wajib diisi'
+        ]);
+
+        $data = pengajuan::findOrFail($id);
+
+        $data->update([
+            'peralatan' => $request->peralatan,
+            'qty' => $request->qty,
+            'unit' => $request->unit,
+            'harga' => $request->harga,
+
+        ]);
+
+        return redirect()->to('homevalidate/pengajuan')->with('success', 'Berhasil Menambah Pengajuan');
     }
 
     /**
@@ -59,6 +108,7 @@ class PenawaranController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        pengajuan::where('id', $id)->delete();
+        return redirect()->to('homevalidate/pengajuan')->with('delete', 'Berhasil Melakukan Delete Data');
     }
 }

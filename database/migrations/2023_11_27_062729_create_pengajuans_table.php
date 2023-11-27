@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('peralatan');
             $table->integer('qty');
             $table->string('unit');
-            $table->foreignId('penawaran_id');
+            $table->integer('harga')->nullable();
+            // $table->foreignId('penawaran_id');
             $table->timestamps();
         });
     }

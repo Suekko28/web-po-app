@@ -29,7 +29,7 @@
                                   class="btn btn-warning mb-2"><i
                                       class=" fa fa-solid fa-pen-to-square"
                                       style="color:white;"></i></a>
-                              <form action=""
+                              <form action="{{url('homevalidate/pengajuan/' . $item->id)}}"
                                   method="POST">
                                   @csrf
                                   @method('DELETE')

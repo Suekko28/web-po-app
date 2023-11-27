@@ -275,53 +275,33 @@
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Basic Table</h4>
-                                <p class="card-description">
-                                    Add class <code>.table</code>
-                                </p>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Nama Peralatan</th>
-                                                <th>QTY</th>
-                                                <th>Unit</th>
-                                                <th>Penawaran</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php $i = 1; ?>
-                                            @foreach ($data as $item)
-                                                <tr>
-                                                    <td>{{ $i }}</td>
-                                                    <td>{{ $item->peralatan }}</td>
-                                                    <td>{{ $item->qty }}</td>
-                                                    <td>{{ $item->unit }}</td>
-                                                    <td>
-                                                        <a href="{{url('admin/pengajuan/' .$item->id)}}" class="btn btn-primary">Buat Penawaran</a>
-                                                    </td>
-                                                    <td scope="row" class="text-center">
-                                                        <a href="" class="btn btn-warning mb-2"><i
-                                                                class=" fa fa-solid fa-pen-to-square"
-                                                                style="color:white;"></i></a>
-                                                        <form action="" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-danger mb-2"><i
-                                                                    class="fa fa-solid fa-trash"></i></button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                <?php $i++; ?>
-
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
+                        <form action="{{ url('homevalidate/pengajuan/' . $data->id) }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                        
+                            <div class="form-group mb-3">
+                                <label for="peralatan">Nama Peralatan</label>
+                                <input type="text" class="form-control" id="peralatan" name="peralatan" placeholder="Masukkan Nama Peralatan" value="{{ $data->peralatan }}">
                             </div>
+                        
+                            <div class="form-group mb-3">
+                                <label for="qty">QTY</label>
+                                <input type="number" class="form-control" id="qty" name="qty" placeholder="Masukkan Jumlah" value="{{ $data->qty }}">
+                            </div>
+                        
+                            <div class="form-group mb-3">
+                                <label for="unit">Unit</label>
+                                <input type="text" class="form-control" id="unit" name="unit" placeholder="Masukkan Unit" value="{{ $data->unit }}">
+                            </div>
+                        
+                            <!-- Add other form fields as needed -->
+                        
+                            <div class="d-flex flex-row-reverse mt-3">
+                                <button type="submit" class="btn btn-primary ms-3">Update</button>
+                                <a href="" class="btn btn-danger">Batal</a>
+                            </div>
+                        </form>
+                                                                    
                         </div>
                     </div>
 
