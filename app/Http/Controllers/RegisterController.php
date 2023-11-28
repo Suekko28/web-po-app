@@ -14,6 +14,7 @@ class RegisterController extends Controller
     }
     public function register(UserFormRequest $request){
         $data=$request->only('name','email','password');
+        $data['role']=2;
         $user=User::Create($data);
         return redirect('/login')->with('success',"Account Succesfully Registered");
     }

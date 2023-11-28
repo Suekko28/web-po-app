@@ -20,7 +20,12 @@ class LoginController extends Controller
         $creds=$request->only('email','password');
         if(auth()->attempt($creds)){
             session(["token" => auth()->user()->createToken($request->email)->plainTextToken]);
-            return redirect()->route('pengajuan.index');
+            if(auth()->user()->role==2){
+            return redirect()->route('user.home');
+            } 
+            else{
+            return redirect()->route('dashboard');
+            }
 
         }
         else{
