@@ -36,7 +36,7 @@
                   Invalid Credentials
               </div>
               @endif
-              <form class="pt-3" action="{{route('login')}}" method="post">
+              <form class="pt-3" action="{{route('login')}}" method="POST">
                 @csrf
                 <div class="form-group">
                   <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" value="{{Session::get('email')}}">

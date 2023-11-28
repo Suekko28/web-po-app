@@ -61,7 +61,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item text-muted disabled" href="#">Welcome ! </a></li>
                         <li>
-                            <form action="" method="get">
+                            <form action="{{ route('login.logout') }}" method="get">
                                 @csrf
                                 <!-- <a class="dropdown-item" href="#">Log out</a> -->
                                 <button type="submit" class="dropdown-item">Log out</button>
