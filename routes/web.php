@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('home-validate');
 });
 
-Route::get('/login',LoginController::class);
+//Route::get('/login',LoginController::class)->middleware('auth');
 Route::resource('/admin/dashboard', DashboardController::class);
 Route::resource('pengajuan', PengajuanController::class);
 Route::resource('/admin/pengajuan/penawaran', PenawaranController::class);
