@@ -1,8 +1,8 @@
 @extends('layouts.app-validate')
 
-@section('navbar-validate')
+@section('content')
     <div class="container mt-5">
-        <a href="{{ url('homevalidate/pengajuan/create') }}" class="btn btn-primary mb-3"> Buat Pengajuan</a>
+        <a href="{{ route('pengajuan.create') }}" class="btn btn-primary mb-3"> Buat Pengajuan</a>
         <div class="table-responsive">
             <table class="table table-bordered vw-100">
                 <thead>
@@ -25,11 +25,11 @@
                             <td>{{ $item->unit }}</td>
                             <td></td>
                             <td scope="row" class="text-center">
-                              <a href=""
+                              <a href="{{ route('pengajuan.edit', $item->id) }}"
                                   class="btn btn-warning mb-2"><i
                                       class=" fa fa-solid fa-pen-to-square"
                                       style="color:white;"></i></a>
-                              <form action="{{url('homevalidate/pengajuan/' . $item->id)}}"
+                              <form action="{{route('pengajuan.destroy' , $item->id)}}"
                                   method="POST">
                                   @csrf
                                   @method('DELETE')

@@ -20,11 +20,8 @@ Route::get('/', function () {
     return view('home-validate');
 });
 
-
+Route::get('/login',LoginController::class);
 Route::resource('/admin/dashboard', DashboardController::class);
-Route::resource('/admin/pengajuan', PenawaranController::class);
+Route::resource('pengajuan', PengajuanController::class);
 Route::resource('/admin/pengajuan/penawaran', PenawaranController::class);
 // Route::resource('/admin/po', POController::class);
-
-Route::resource('/homevalidate/pengajuan', PengajuanController::class);
-Route::resource('/homevalidate/pengajuan/form', PengajuanController::class);

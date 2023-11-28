@@ -12,8 +12,9 @@ class PengajuanController extends Controller
      */
     public function index()
     {
+
         $data = pengajuan::orderby("id", "desc")->paginate(10);
-        return view("index", compact("data"));
+        return view("pengajuan.index", compact("data"));
     }
 
     /**
@@ -21,7 +22,7 @@ class PengajuanController extends Controller
      */
     public function create()
     {
-        return view("form");
+        return view("pengajuan.create");
     }
 
     /**
@@ -50,7 +51,7 @@ class PengajuanController extends Controller
         ];
 
         pengajuan::create($data);
-        return redirect()->to('homevalidate/pengajuan')->with('success', 'Berhasil Menambah Pengajuan');
+        return redirect()->to(route('pengajuan.index'))->with('success', 'Berhasil Menambah Pengajuan');
     }
 
     /**
@@ -67,7 +68,7 @@ class PengajuanController extends Controller
     public function edit(string $id)
     {
         $data = pengajuan::where('id', $id)->first();
-        return view('/homevalidate/pengajuan')->with('data', $data);
+        return view('pengajuan.edit')->with('data', $data);
     }
 
     /**
@@ -98,7 +99,7 @@ class PengajuanController extends Controller
 
         ]);
 
-        return redirect()->to('homevalidate/pengajuan')->with('success', 'Berhasil Menambah Pengajuan');
+        return redirect()->to(route('pengajuan.index'))->with('success', 'Berhasil Mengubah Pengajuan');
     }
 
     /**
@@ -107,6 +108,6 @@ class PengajuanController extends Controller
     public function destroy(string $id)
     {
         pengajuan::where('id', $id)->delete();
-        return redirect()->to('homevalidate/pengajuan')->with('delete', 'Berhasil Melakukan Delete Data');
+        return redirect()->to(route('pengajuan.index'))->with('delete', 'Berhasil Melakukan Delete Data');
     }
 }
