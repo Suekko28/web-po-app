@@ -39,7 +39,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
-        <a href="index.html" class="navbar-brand ps-5 me-0">
+        <a href="{{ route('user.home') }}" class="navbar-brand ps-5 me-0">
             <h1 class="text-white m-0">Industro</h1>
         </a>
         <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -47,10 +47,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="{{ route('user.home') }}" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="{{url('homevalidate/pengajuan')}}" class="nav-item nav-link">Pengajuan</a>
+                <a href="{{route('pengajuan.index')}}" class="nav-item nav-link">Pengajuan</a>
             </div>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown me-2">
@@ -61,7 +61,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item text-muted disabled" href="#">Welcome ! </a></li>
                         <li>
-                            <form action="" method="get">
+                            <form action="{{ route('logout') }}" method="get">
                                 @csrf
                                 <!-- <a class="dropdown-item" href="#">Log out</a> -->
                                 <button type="submit" class="dropdown-item">Log out</button>
@@ -73,7 +73,7 @@
         </div>
     </nav>
     <!-- Navbar End -->
-@yield('navbar-validate')
+@yield('content')
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

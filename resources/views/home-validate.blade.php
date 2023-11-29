@@ -1,5 +1,5 @@
 @extends('layouts.app-validate')
 
-@section('navbar-validate')
+@section('content')
     
 @endsection
