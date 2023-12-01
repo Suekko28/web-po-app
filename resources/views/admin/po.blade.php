@@ -280,50 +280,45 @@
                               Add class <code>.table</code>
                             </p>
                             <div class="table-responsive">
-                              <table class="table">
-                                <thead>
-                                  <tr>
-                                    <th>Profile</th>
-                                    <th>VatNo.</th>
-                                    <th>Created</th>
-                                    <th>Status</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td>Jacob</td>
-                                    <td>53275531</td>
-                                    <td>12 May 2017</td>
-                                    <td><label class="badge badge-danger">Pending</label></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Messsy</td>
-                                    <td>53275532</td>
-                                    <td>15 May 2017</td>
-                                    <td><label class="badge badge-warning">In progress</label></td>
-                                  </tr>
-                                  <tr>
-                                    <td>John</td>
-                                    <td>53275533</td>
-                                    <td>14 May 2017</td>
-                                    <td><label class="badge badge-info">Fixed</label></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Peter</td>
-                                    <td>53275534</td>
-                                    <td>16 May 2017</td>
-                                    <td><label class="badge badge-success">Completed</label></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Dave</td>
-                                    <td>53275535</td>
-                                    <td>20 May 2017</td>
-                                    <td><label class="badge badge-warning">In progress</label></td>
-                                  </tr>
-                                </tbody>
-                              </table>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama Peralatan</th>
+                                            <th>QTY</th>
+                                            <th>Harga</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                
+                                        {{-- @foreach ($data as $item) --}}
+                                            <tr>
+                                                {{-- <td>{{ $i }}</td>
+                                                <td>{{ $item->peralatan }}</td>
+                                                <td>{{ $item->qty }}</td>
+                                                <td>{{ $item->unit }}</td>
+                                                <td>
+                                                    <a href="{{url('admin/pengajuan/' .$item->id)}}" class="btn btn-success">Buat Penawaran</a>
+                                                </td>
+                                                <td scope="row" class="text-center">
+                                                    <a href="" class="btn btn-warning mb-2"><i
+                                                            class=" fa fa-solid fa-pen-to-square"
+                                                            style="color:white;"></i></a>
+                                                    <form action="" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-danger mb-2"><i
+                                                                class="fa fa-solid fa-trash"></i></button>
+                                                    </form>
+                                                </td> --}}
+                                            </tr>
+
+                                        {{-- @endforeach --}}
+                                    </tbody>
+                                </table>
                             </div>
-                          </div>
+                      </div>
                         </div>
                       </div>
           

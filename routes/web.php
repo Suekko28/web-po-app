@@ -26,13 +26,13 @@ Route::middleware(['guest'])->group(function(){
     Route::get('/register',[RegisterController::class,'showRegisterForm'])->name('register');
     Route::post('/register',[RegisterController::class,'register'])->name('register.post');
     Route::get('/', function () {
-        return view('home');
+        return view('user.home');
     })->name('home');
     
 });
 Route::middleware(['auth'])->prefix('/')->group(function(){
     Route::get('/home', function () {
-        return view('home-validate');
+        return view('user.home-validate');
     })->name('user.home');
     Route::resource('admin/dashboard', DashboardController::class);
     Route::resource('pengajuan', PengajuanController::class);
@@ -45,16 +45,23 @@ Route::middleware(['auth','admin'])->prefix('/')->group(function(){
     Route::get('/admin/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+
+    // Route::resource('admin/pengajuan', PenawaranController::class);
+
 });
 
 Route::get('/service', function () {
-    return view('service');
+    return view('user.service');
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('user.about');
 });
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('user.contact');
+});
+
+Route::get('/admin/po', function () {
+    return view('admin.po');
 });
