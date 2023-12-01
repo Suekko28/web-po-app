@@ -45,6 +45,9 @@ Route::middleware(['auth','admin'])->prefix('/')->group(function(){
     Route::get('/admin/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+
+    // Route::resource('admin/pengajuan', PenawaranController::class);
+
 });
 
 Route::get('/service', function () {
@@ -57,4 +60,8 @@ Route::get('/about', function () {
 
 Route::get('/contact', function () {
     return view('user.contact');
+});
+
+Route::get('/admin/po', function () {
+    return view('admin.po');
 });

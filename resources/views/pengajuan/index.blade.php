@@ -12,6 +12,7 @@
                         <th scope="col">QTY</th>
                         <th scope="col">Unit</th>
                         <th scope="col">Penawaran</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -24,10 +25,11 @@
                             <td>{{ $item->qty }}</td>
                             <td>{{ $item->unit }}</td>
                             <td></td>
+                            <td class="text-warning">In progress</td>
                             <td scope="row" class="text-center">
                               <a href="{{ route('pengajuan.edit', $item->id) }}"
                                   class="btn btn-warning mb-2"><i
-                                      class=" fa fa-solid fa-pen-to-square"
+                                      class=" fa fa-solid fa-pen"
                                       style="color:white;"></i></a>
                               <form action="{{route('pengajuan.destroy' , $item->id)}}"
                                   method="POST">
