@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Industro - Industrial HTML Template</title>
+    <title>Mustika Arga Kencana</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -40,7 +40,7 @@
 
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
         <a href="{{ route('user.home') }}" class="navbar-brand ps-5 me-0">
-            <h1 class="text-white m-0">Industro</h1>
+            <h1 class="text-white m-0">Mustika Arga Kencana</h1>
         </a>
         <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -48,9 +48,9 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{ route('user.home') }}" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">Service</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="{{url('service')}}" class="nav-item nav-link">Service</a>
+                <a href="{{url('about')}}" class="nav-item nav-link">About</a>
+                <a href="{{url('contact')}}" class="nav-item nav-link">Contact</a>
                 <a href="{{route('pengajuan.index')}}" class="nav-item nav-link">Pengajuan</a>
             </div>
             <ul class="navbar-nav">
