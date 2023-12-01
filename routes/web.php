@@ -46,3 +46,15 @@ Route::middleware(['auth','admin'])->prefix('/')->group(function(){
         return view('admin.dashboard');
     })->name('dashboard');
 });
+
+Route::get('/service', function () {
+    return view('service');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
