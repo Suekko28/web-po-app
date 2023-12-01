@@ -26,8 +26,8 @@ Route::middleware(['guest'])->group(function(){
     Route::get('/register',[RegisterController::class,'showRegisterForm'])->name('register');
     Route::post('/register',[RegisterController::class,'register'])->name('register.post');
     Route::get('/', function () {
-        return view('user.home');
-    })->name('home');
+        return view('app.home');
+    })->name('app.home');
     
 });
 Route::middleware(['auth'])->prefix('/')->group(function(){
@@ -51,17 +51,17 @@ Route::middleware(['auth','admin'])->prefix('/')->group(function(){
 });
 
 Route::get('/service', function () {
-    return view('user.service');
-});
+    return view('app.service');
+})->name('service');;
 
 Route::get('/about', function () {
-    return view('user.about');
-});
+    return view('app.about');
+})->name('about');
 
 Route::get('/contact', function () {
-    return view('user.contact');
-});
+    return view('app.contact');
+})->name('contact');
 
 Route::get('/admin/po', function () {
     return view('admin.po');
-});
+})->name('admin.po');
