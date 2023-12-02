@@ -68,6 +68,14 @@ Route::middleware(['guest'])->group(function(){
         return view('admin.pengajuan');
     })->name('admin.pengajuan');
 
+    Route::get('/admin/penjadwalan', function () {
+        return view('admin.penjadwalan');
+    })->name('admin.penjadwalano');
+
+    Route::get('/admin/pengajuan/create', function () {
+        return view('admin.form');
+    })->name('admin.form');
+
     Route::get('/admin/dashboard', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');

@@ -24,7 +24,17 @@
                             <td>{{ $item->peralatan }}</td>
                             <td>{{ $item->qty }}</td>
                             <td>{{ $item->unit }}</td>
-                            <td></td>
+                            <td class="text-center"><a href=""
+                                target="_blank">
+                                <button type="button" class="btn btn-primary mb-2"><i
+                                        class="fa fa-file"></i></button>
+                            </a>
+                            <br>
+                        <div class="d-flex flex-row justify-content-center">
+                            <a class="me-3 btn btn-success rounded-5" href="">Accepted</a>
+                            <a class="btn btn-danger rounded-5" href="">Reject</a>
+                        </div>
+                    </td>
                             <td class="text-warning">In progress</td>
                             <td scope="row" class="text-center">
                               <a href="{{ route('pengajuan.edit', $item->id) }}"
