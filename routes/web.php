@@ -52,17 +52,33 @@ Route::middleware(['guest'])->group(function(){
 });
 
 
-Route::middleware(['admin'])->prefix('/')->group(function(){
-    Route::resource('admin/dashboard', DashboardController::class);
+// Route::middleware(['admin'])->prefix('/')->group(function(){
+//     Route::resource('admin/dashboard', DashboardController::class);
 
-    // Route::resource('admin/pengajuan', PenawaranController::class);
+//     Route::resource('admin/pengajuan', PenawaranController::class);
 
-});
+// });
 
 
-Route::get('/admin/po', function () {
-    return view('admin.po');
-})->name('admin.po');
+    Route::get('/admin/po', function () {
+        return view('admin.po');
+    })->name('admin.po');
+
+    Route::get('/admin/pengajuan', function () {
+        return view('admin.pengajuan');
+    })->name('admin.pengajuan');
+
+    Route::get('/admin/penjadwalan', function () {
+        return view('admin.penjadwalan');
+    })->name('admin.penjadwalano');
+
+    Route::get('/admin/pengajuan/create', function () {
+        return view('admin.form');
+    })->name('admin.form');
+
+    Route::get('/admin/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
 
 Route::get('/service', function () {
     return view('app.service');
