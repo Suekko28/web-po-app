@@ -277,31 +277,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php $i = 1; ?>
-                                            @foreach ($data as $item)
-                                                <tr>
-                                                    <td>{{ $i }}</td>
-                                                    <td>{{ $item->peralatan }}</td>
-                                                    <td>{{ $item->qty }}</td>
-                                                    <td>{{ $item->unit }}</td>
-                                                    <td>
-                                                        <a href="{{url('admin/pengajuan/' .$item->id)}}" class="btn btn-success">Buat Penawaran</a>
-                                                    </td>
-                                                    <td scope="row" class="text-center">
-                                                        <a href="" class="btn btn-warning mb-2"><i
-                                                                class=" fa fa-solid fa-pen-to-square"
-                                                                style="color:white;"></i></a>
-                                                        <form action="" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-danger mb-2"><i
-                                                                    class="fa fa-solid fa-trash"></i></button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                <?php $i++; ?>
-
-                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
