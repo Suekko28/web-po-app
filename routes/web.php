@@ -23,11 +23,11 @@ Route::middleware(['auth'])->prefix('/')->group(function(){
     Route::get('user/service', function () {
         return view('user.service');
     })->name('user.service');
-    
+
     Route::get('user/about', function () {
         return view('user.about');
     })->name('user.about');
-    
+
     Route::get('user/contact', function () {
         return view('user.contact');
     })->name('user.contact');
@@ -35,8 +35,8 @@ Route::middleware(['auth'])->prefix('/')->group(function(){
         return view('user.home');
     })->name('user.home');
 
-    
-    
+
+
     Route::resource('pengajuan', PengajuanController::class);
     Route::resource('admin/pengajuan/penawaran', PenawaranController::class);
     Route::get('logout',[LoginController::class,'logout'])->name('logout');
@@ -47,8 +47,8 @@ Route::middleware(['guest'])->group(function(){
     Route::post('/login',[LoginController::class,'login'])->name('login.post');
     Route::get('/register',[RegisterController::class,'showRegisterForm'])->name('register');
     Route::post('/register',[RegisterController::class,'register'])->name('register.post');
-    
-    
+
+
 });
 
 
