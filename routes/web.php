@@ -52,7 +52,7 @@ Route::middleware(['guest'])->group(function(){
 });
 
 
-Route::middleware(['auth','admin'])->prefix('/')->group(function(){
+Route::middleware(['admin'])->prefix('/')->group(function(){
     Route::resource('admin/dashboard', DashboardController::class);
 
     // Route::resource('admin/pengajuan', PenawaranController::class);
@@ -63,6 +63,7 @@ Route::middleware(['auth','admin'])->prefix('/')->group(function(){
 Route::get('/admin/po', function () {
     return view('admin.po');
 })->name('admin.po');
+
 Route::get('/service', function () {
     return view('app.service');
 })->name('app.service');;

@@ -21,10 +21,10 @@
             <div class="col-lg-6">
                 <div class="row gx-3 h-100">
                     <div class="col-6 align-self-start wow fadeInUp" data-wow-delay="0.1s">
-                        <img class="img-fluid" src="img/about-1.jpg">
+                        <img class="img-fluid" src="/img/about-1.jpg">
                     </div>
                     <div class="col-6 align-self-end wow fadeInDown" data-wow-delay="0.1s">
-                        <img class="img-fluid" src="img/about-2.jpg">
+                        <img class="img-fluid" src="/img/about-2.jpg">
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@
         <div class="row g-4">
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item">
-                    <img class="img-fluid" src="img/team-1.jpg" alt="">
+                    <img class="img-fluid" src="/img/team-1.jpg" alt="">
                     <div class="d-flex">
                         <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
                             style="height: 90px;">
@@ -137,7 +137,7 @@
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item">
-                    <img class="img-fluid" src="img/team-1.jpg" alt="">
+                    <img class="img-fluid" src="/img/team-1.jpg" alt="">
                     <div class="d-flex">
                         <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
                             style="height: 90px;">
@@ -150,7 +150,7 @@
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item">
-                    <img class="img-fluid" src="img/team-1.jpg" alt="">
+                    <img class="img-fluid" src="/img/team-1.jpg" alt="">
                     <div class="d-flex">
                         <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
                             style="height: 90px;">
