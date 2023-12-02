@@ -87,28 +87,28 @@
         <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
             <div class="text-center border p-5">
                 <i class="fa fa-certificate fa-3x text-white mb-3"></i>
-                <h1 class="display-2 text-success mb-0" data-toggle="counter-up">25</h1>
+                <h1 class="display-2 text-success mb-0" data-toggle="counter-up">4</h1>
                 <span class="fs-5 fw-semi-bold text-white">Years Experience</span>
             </div>
         </div>
         <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.3s">
             <div class="text-center border p-5">
                 <i class="fa fa-users-cog fa-3x text-white mb-3"></i>
-                <h1 class="display-2 text-success mb-0" data-toggle="counter-up">135</h1>
+                <h1 class="display-2 text-success mb-0" data-toggle="counter-up">10</h1>
                 <span class="fs-5 fw-semi-bold text-white">Team Members</span>
             </div>
         </div>
         <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.5s">
             <div class="text-center border p-5">
                 <i class="fa fa-users fa-3x text-white mb-3"></i>
-                <h1 class="display-2 text-success mb-0" data-toggle="counter-up">957</h1>
+                <h1 class="display-2 text-success mb-0" data-toggle="counter-up">202</h1>
                 <span class="fs-5 fw-semi-bold text-white">Happy Clients</span>
             </div>
         </div>
         <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.7s">
             <div class="text-center border p-5">
                 <i class="fa fa-check-double fa-3x text-white mb-3"></i>
-                <h1 class="display-2 text-success mb-0" data-toggle="counter-up">1839</h1>
+                <h1 class="display-2 text-success mb-0" data-toggle="counter-up">2576</h1>
                 <span class="fs-5 fw-semi-bold text-white">Projects Done</span>
             </div>
         </div>
@@ -124,39 +124,78 @@
         <div class="row g-4">
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item">
-                    <img class="img-fluid" src="/img/team-1.jpg" alt="">
+                    <img class="img-fluid" src="/img/staf-1.jpg" alt="" style="height: 320px; object-fit:cover; width:75% ">
                     <div class="d-flex">
-                        <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
+                        <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-75 ps-4"
                             style="height: 90px;">
-                            <h5>Rob Miller</h5>
-                            <span class="text-primary">CEO & Founder</span>
-  
+                            <h5>Muwardi Ramdhanwaluya</h5>
+                            <span class="text-primary">Inspector AK3 BU & BT</span>
+
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item">
-                    <img class="img-fluid" src="/img/team-1.jpg" alt="">
+                    <img class="img-fluid" src="/img/staf-2.jpg" alt="" style="height: 320px; object-fit:cover; width:75% ">
                     <div class="d-flex">
-                        <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
+                        <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-75 ps-4"
                             style="height: 90px;">
-                            <h5>Rob Miller</h5>
-                            <span class="text-primary">CEO & Founder</span>
-  
+                            <h5>Hizbun Sahnun</h5>
+                            <span class="text-primary">Inspector AK3 Listrik</span>
+
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item">
-                    <img class="img-fluid" src="/img/team-1.jpg" alt="">
+                    <img class="img-fluid" src="/img/staf-3.jpg" alt="" style="height: 320px; object-fit:cover; width:75% ">
                     <div class="d-flex">
-                        <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
+                        <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-75 ps-4"
                             style="height: 90px;">
-                            <h5>Rob Miller</h5>
-                            <span class="text-primary">CEO & Founder</span>
-  
+                            <h5>Farhan Fadhliansyah</h5>
+                            <span class="text-primary">Inspector AK3 PAA</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item">
+                    <img class="img-fluid" src="/img/staf-4.jpg" alt="" style="height: 320px; object-fit:cover; width:75% ">
+                    <div class="d-flex">
+                        <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-75 ps-4"
+                            style="height: 90px;">
+                            <h5>Dimas Dihanggoro</h5>
+                            <span class="text-primary">Inspector PTP</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item">
+                    <img class="img-fluid" src="/img/staf-5.jpg" alt="" style="height: 320px; object-fit:cover; width:75% ">
+                    <div class="d-flex">
+                        <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-75 ps-4"
+                            style="height: 90px;">
+                            <h5>Sutarno</h5>
+                            <span class="text-primary">Inspector AK3 IPK</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item">
+                    <img class="img-fluid" src="/img/staf-6.jpg" alt="" style="height: 320px; object-fit:cover; width:75% ">
+                    <div class="d-flex">
+                        <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-75 ps-4"
+                            style="height: 90px;">
+                            <h5>Mugni Rosada W</h5>
+                            <span class="text-primary">Staff Operational</span>
+
                         </div>
                     </div>
                 </div>
@@ -173,9 +212,9 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Our Office</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Apel 1 Blok A No. 16 Puri Nirwana 2 Kel. Harapan Jaya, Kec. Cibinong, Kab. Bogor 16914</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+6221-83718138</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>argakencana@murgana.co.id</p>
                 <div class="d-flex pt-3">
                     <a class="btn btn-square btn-success rounded-circle me-2" href=""><i
                             class="fab fa-twitter"></i></a>
@@ -198,7 +237,7 @@
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Business Hours</h5>
                 <p class="mb-1">Monday - Friday</p>
-                <h6 class="text-light">09:00 am - 07:00 pm</h6>
+                <h6 class="text-light">09:00 am - 16:00 pm</h6>
                 <p class="mb-1">Saturday</p>
                 <h6 class="text-light">09:00 am - 12:00 pm</h6>
                 <p class="mb-1">Sunday</p>
