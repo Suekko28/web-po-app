@@ -21,6 +21,7 @@
                                 <th>Harga</th>
                                 <th>Total</th>
                                 <th>Tanggal PO</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
