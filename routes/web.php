@@ -19,49 +19,62 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::middleware(['guest'])->group(function(){
-    Route::get('/login',[LoginController::class,'showLoginForm'])->name('login');
-    Route::post('/login',[LoginController::class,'login'])->name('login.post');
-    Route::get('/register',[RegisterController::class,'showRegisterForm'])->name('register');
-    Route::post('/register',[RegisterController::class,'register'])->name('register.post');
-    Route::get('/', function () {
-        return view('app.home');
-    })->name('app.home');
-    
-});
 Route::middleware(['auth'])->prefix('/')->group(function(){
-    Route::get('/home', function () {
-        return view('user.home-validate');
+    Route::get('user/service', function () {
+        return view('user.service');
+    })->name('user.service');
+    
+    Route::get('user/about', function () {
+        return view('user.about');
+    })->name('user.about');
+    
+    Route::get('user/contact', function () {
+        return view('user.contact');
+    })->name('user.contact');
+    Route::get('home', function () {
+        return view('user.home');
     })->name('user.home');
-    Route::resource('admin/dashboard', DashboardController::class);
+
+    
+    
     Route::resource('pengajuan', PengajuanController::class);
     Route::resource('admin/pengajuan/penawaran', PenawaranController::class);
     Route::get('logout',[LoginController::class,'logout'])->name('logout');
     // Route::resource('/admin/po', POController::class);
 });
+Route::middleware(['guest'])->group(function(){
+    Route::get('/login',[LoginController::class,'showLoginForm'])->name('login');
+    Route::post('/login',[LoginController::class,'login'])->name('login.post');
+    Route::get('/register',[RegisterController::class,'showRegisterForm'])->name('register');
+    Route::post('/register',[RegisterController::class,'register'])->name('register.post');
+    
+    
+});
+
 
 Route::middleware(['auth','admin'])->prefix('/')->group(function(){
-    Route::get('/admin/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::resource('admin/dashboard', DashboardController::class);
 
     // Route::resource('admin/pengajuan', PenawaranController::class);
 
 });
 
-Route::get('/service', function () {
-    return view('app.service');
-})->name('service');;
-
-Route::get('/about', function () {
-    return view('app.about');
-})->name('about');
-
-Route::get('/contact', function () {
-    return view('app.contact');
-})->name('contact');
 
 Route::get('/admin/po', function () {
     return view('admin.po');
 })->name('admin.po');
+Route::get('/service', function () {
+    return view('app.service');
+})->name('app.service');;
+
+Route::get('/about', function () {
+    return view('app.about');
+})->name('app.about');
+
+Route::get('/contact', function () {
+    return view('app.contact');
+})->name('app.contact');
+
+Route::get('/', function () {
+    return view('app.home');
+})->name('app.home');

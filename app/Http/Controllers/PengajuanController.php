@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\PengajuanFormRequest;
 use App\Models\pengajuan;
 use Illuminate\Http\Request;
 
@@ -28,30 +30,11 @@ class PengajuanController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PengajuanFormRequest $request)
     {
-        $request->validate([
-            'peralatan' => 'required',
-            'qty' => 'required',
-            'unit' => 'required',
-            'harga' => 'nullable'
 
-        ], [
-            'peralatan.required' => 'Peralatan wajib diisi',
-            'qty.required' => 'QTY wajib diisi',
-            'unit.required' => 'Unit wajib diisi'
-        ]);
-
-        $data = [
-            'peralatan' => $request->peralatan,
-            'qty' => $request->qty,
-            'unit' => $request->unit,
-            'harga' => $request->harga,
-
-        ];
-
-        pengajuan::create($data);
-        return redirect()->to(route('pengajuan.index'))->with('success', 'Berhasil Menambah Pengajuan');
+        pengajuan::create($request->all());
+        return redirect()->route('pengajuan.index')->with('success', 'Berhasil Menambah Pengajuan');
     }
 
     /**
@@ -74,32 +57,26 @@ class PengajuanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(PengajuanFormRequest $request, string $id)
     {
-        $request->validate([
-            'peralatan' => 'required',
-            'qty' => 'required',
-            'unit' => 'required',
-            'harga' => 'nullable'
+        // $request->validate([
+        //     'peralatan' => 'required',
+        //     'qty' => 'required',
+        //     'unit' => 'required',
+        //     'harga' => 'nullable'
 
             
-        ], [
-            'peralatan.required' => 'Peralatan wajib diisi',
-            'qty.required' => 'QTY wajib diisi',
-            'unit.required' => 'Unit wajib diisi'
-        ]);
+        // ], [
+        //     'peralatan.required' => 'Peralatan wajib diisi',
+        //     'qty.required' => 'QTY wajib diisi',
+        //     'unit.required' => 'Unit wajib diisi'
+        // ]);
 
         $data = pengajuan::findOrFail($id);
 
-        $data->update([
-            'peralatan' => $request->peralatan,
-            'qty' => $request->qty,
-            'unit' => $request->unit,
-            'harga' => $request->harga,
+        $data->update($request->all());
 
-        ]);
-
-        return redirect()->to(route('pengajuan.index'))->with('success', 'Berhasil Mengubah Pengajuan');
+        return redirect()->route('pengajuan.index')->with('success', 'Berhasil Mengubah Pengajuan');
     }
 
     /**

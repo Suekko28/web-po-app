@@ -17,6 +17,7 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
+        
         $creds=$request->only('email','password');
         if(auth()->attempt($creds)){
             session(["token" => auth()->user()->createToken($request->email)->plainTextToken]);
@@ -38,6 +39,6 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         session(["token" => ""]);
-        return redirect()->route('home');
+        return redirect()->route('app.home');
     }
 }

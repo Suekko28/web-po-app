@@ -45,9 +45,8 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{ route('app.home') }}" class="nav-item nav-link active">Home</a>
-                <a href="{{ route('service') }}" class="nav-item nav-link">Service</a>
-                <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
-                <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
+                <a href="{{ route('app.service') }}" class="nav-item nav-link">Service</a>
+                <a href="{{ route('app.about') }}" class="nav-item nav-link">About</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu bg-light m-0">
@@ -58,13 +57,13 @@
                         <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="{{ route('app.contact') }}" class="nav-item nav-link">Contact</a>
             </div>
             <a href="{{route('login')}}" class="btn btn-primary px-3 d-none d-lg-block">Login</a>
         </div>
     </nav>
     <!-- Navbar End -->
-@yield('navbar')
+@yield('content')
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
