@@ -47,35 +47,34 @@ Route::middleware(['guest'])->group(function(){
     Route::post('/login',[LoginController::class,'login'])->name('login.post');
     Route::get('/register',[RegisterController::class,'showRegisterForm'])->name('register');
     Route::post('/register',[RegisterController::class,'register'])->name('register.post');
+    Route::get('/service', function () {
+        return view('app.service');
+    })->name('app.service');;
     
+    Route::get('/about', function () {
+        return view('app.about');
+    })->name('app.about');
+    
+    Route::get('/contact', function () {
+        return view('app.contact');
+    })->name('app.contact');
+    
+    Route::get('/', function () {
+        return view('app.home');
+    })->name('app.home');
     
 });
 
 
 Route::middleware(['admin'])->prefix('/')->group(function(){
     Route::resource('admin/dashboard', DashboardController::class);
-
+    Route::get('admin/po', function () {
+        return view('admin.po');
+    })->name('admin.po');
     // Route::resource('admin/pengajuan', PenawaranController::class);
 
 });
 
 
-Route::get('/admin/po', function () {
-    return view('admin.po');
-})->name('admin.po');
 
-Route::get('/service', function () {
-    return view('app.service');
-})->name('app.service');;
 
-Route::get('/about', function () {
-    return view('app.about');
-})->name('app.about');
-
-Route::get('/contact', function () {
-    return view('app.contact');
-})->name('app.contact');
-
-Route::get('/', function () {
-    return view('app.home');
-})->name('app.home');
