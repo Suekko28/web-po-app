@@ -24,7 +24,17 @@
                             <td>{{ $item->peralatan }}</td>
                             <td>{{ $item->qty }}</td>
                             <td>{{ $item->unit }}</td>
-                            <td></td>
+                            <td class="text-center"><a href=""
+                                target="_blank">
+                                <button type="button" class="btn btn-primary mb-2"><i
+                                        class="fa fa-file"></i></button>
+                            </a>
+                            <br>
+                        <div class="d-flex flex-row justify-content-center">
+                            <a class="me-3 btn btn-success rounded-5" href="">Accepted</a>
+                            <a class="btn btn-danger rounded-5" href="">Reject</a>
+                        </div>
+                    </td>
                             <td class="text-warning">In progress</td>
                             <td scope="row" class="text-center">
                               <a href="{{ route('pengajuan.edit', $item->id) }}"
@@ -52,9 +62,9 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Our Office</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Apel 1 Blok A No. 16 Puri Nirwana 2 Kel. Harapan Jaya, Kec. Cibinong, Kab. Bogor 16914</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+6221-83718138</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>argakencana@murgana.co.id</p>
                     <div class="d-flex pt-3">
                         <a class="btn btn-square btn-success rounded-circle me-2" href=""><i
                                 class="fab fa-twitter"></i></a>
@@ -77,7 +87,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Business Hours</h5>
                     <p class="mb-1">Monday - Friday</p>
-                    <h6 class="text-light">09:00 am - 07:00 pm</h6>
+                    <h6 class="text-light">09:00 am - 16:00 pm</h6>
                     <p class="mb-1">Saturday</p>
                     <h6 class="text-light">09:00 am - 12:00 pm</h6>
                     <p class="mb-1">Sunday</p>
@@ -96,5 +106,5 @@
             </div>
         </div>
     </div>
-    
+
 @endsection

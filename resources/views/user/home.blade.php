@@ -5,15 +5,14 @@
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="img/carousel-1.jpg" alt="Image">
+                    <img class="w-100" src="img/carousel-1.jpg" alt="Image" style="object-fit: cover;" height="1000px">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-10 text-start">
-                                    <p class="fs-5 fw-medium text-success text-uppercase animated slideInRight">4
-                                        YEARS OF EXPERIENCE</p>
-                                    <h1 class="display-1 text-white mb-5 animated slideInRight">Consultant
-                                        Consultant Lingkungan, Jasa Konsultasi Lingkungan beserta AMDAL & UKL UPLy</h1>
+                                    <p class="fs-5 fw-medium text-success text-uppercase animated slideInRight">Welcome to the PT. Mustika Arga Kencana</p>
+                                    <h1 class="display-1 text-white mb-5 animated slideInRight">Perusahaan Jasa Keselamatan Dan Kesehatan Kerja
+									(PJK3)</h1>
                                     <a href="" class="btn btn-success py-3 px-5 animated slideInRight">Explore
                                         More</a>
                                 </div>
@@ -22,16 +21,14 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                    <img class="w-100" src="img/carousel-2.jpg" alt="Image" style="object-fit: cover;">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-10 text-start">
-                                    <p class="fs-5 fw-medium text-success text-uppercase animated slideInRight">4
-                                        YEARS OF EXPERIENCE</p>
-                                    <h1 class="display-1 text-white mb-5 animated slideInRight">General Supplier
-                                        Pemasok berbagai macam kebutuhan Industri pabrik, gedung-gedung dan perkantoran.
-                                    </h1>
+                                    <p class="fs-5 fw-medium text-success text-uppercase animated slideInRight">Welcome to the PT. Mustika Arga Kencana</p>
+                                    <h1 class="display-1 text-white mb-5 animated slideInRight">Perusahaan Jasa Keselamatan Dan Kesehatan Kerja
+                                        (PJK3)</h1>
                                     <a href="" class="btn btn-success py-3 px-5 animated slideInRight">Explore
                                         More</a>
                                 </div>
@@ -192,7 +189,7 @@
                             <i class="fa fa-phone-alt fa-2x text-success"></i>
                         </div>
                         <h4 class="mb-3">Phone Number</h4>
-                        <p class="mb-2">+012 345 67890</p>
+                        <p class="mb-2">+6221-83718138</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -201,7 +198,7 @@
                             <i class="fa fa-envelope-open fa-2x text-success"></i>
                         </div>
                         <h4 class="mb-3">Email Address</h4>
-                        <p class="mb-2">info@example.com</p>
+                        <p class="mb-2">argakencana@murgana.co.id</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -210,7 +207,7 @@
                             <i class="fa fa-map-marker-alt fa-2x text-success"></i>
                         </div>
                         <h4 class="mb-3">Office Address</h4>
-                        <p class="mb-2">+012 345 67890</p>
+                        <p class="mb-2">Jl. Apel 1 Blok A No. 16 Puri Nirwana 2 Kel. Harapan Jaya, Kec. Cibinong, Kab. Bogor 16914</p>
                     </div>
                 </div>
             </div>
@@ -223,9 +220,9 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Our Office</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Apel 1 Blok A No. 16 Puri Nirwana 2 Kel. Harapan Jaya, Kec. Cibinong, Kab. Bogor 16914</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+6221-83718138</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>argakencana@murgana.co.id</p>
                     <div class="d-flex pt-3">
                         <a class="btn btn-square btn-success rounded-circle me-2" href=""><i
                                 class="fab fa-twitter"></i></a>
@@ -248,7 +245,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Business Hours</h5>
                     <p class="mb-1">Monday - Friday</p>
-                    <h6 class="text-light">09:00 am - 07:00 pm</h6>
+                    <h6 class="text-light">09:00 am - 16:00 pm</h6>
                     <p class="mb-1">Saturday</p>
                     <h6 class="text-light">09:00 am - 12:00 pm</h6>
                     <p class="mb-1">Sunday</p>
