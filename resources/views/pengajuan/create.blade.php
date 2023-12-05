@@ -7,7 +7,7 @@
         <h2>Pengajuan Barang</h2>
         <h5>Silahkan Isi Form Dibawah Ini Untuk Pengajuan !</h5>
     </div>
-    <form action="{{route('pengajuan.store')}}" method="POST" enctype="multipart/form-data" >
+    <form action="{{route('user-pengajuan.store')}}" method="POST" enctype="multipart/form-data" >
         @csrf
           <div class="card-body container">
             <div class="form-group mb-3">

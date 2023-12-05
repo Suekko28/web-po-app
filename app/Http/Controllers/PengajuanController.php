@@ -16,7 +16,7 @@ class PengajuanController extends Controller
     {
 
         $data = pengajuan::orderby("id", "desc")->paginate(10);
-        return view("pengajuan.index", compact("data"));
+        return view("admin-pengajuan.index")->with('data',$data);
     }
 
     /**

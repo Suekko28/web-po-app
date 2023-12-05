@@ -251,25 +251,25 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{ route('admin') }}">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{ route('admin-pengajuan.index') }}">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Pengajuan</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{ route('admin-po.index') }}">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">PO</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{ route('admin-penjadwalan.index') }}">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Penjadwalan</span>
                         </a>

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-5">
-        <a href="{{ route('pengajuan.create') }}" class="btn btn-primary mb-3"> Buat Pengajuan</a>
+        <a href="{{ route('user-pengajuan.create') }}" class="btn btn-primary mb-3"> Buat Pengajuan</a>
         <div class="table-responsive">
             <table class="table table-bordered vw-100">
                 <thead>
@@ -11,20 +11,20 @@
                         <th scope="col">Peralatan</th>
                         <th scope="col">QTY</th>
                         <th scope="col">Unit</th>
-                        <th scope="col">Penawaran</th>
+                        <!-- <th scope="col">Penawaran</th> -->
                         <th scope="col">Status</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $i = $data->firstItem(); ?>
+                    <?php $i = 1; ?>
                     @foreach ($data as $item)
                         <tr>
                             <th scope="row">{{ $i }}</th>
                             <td>{{ $item->peralatan }}</td>
                             <td>{{ $item->qty }}</td>
                             <td>{{ $item->unit }}</td>
-                            <td class="text-center"><a href=""
+                            <!-- <td class="text-center"><a href=""
                                 target="_blank">
                                 <button type="button" class="btn btn-primary mb-2"><i
                                         class="fa fa-file"></i></button>
@@ -33,15 +33,15 @@
                         <div class="d-flex flex-row justify-content-center">
                             <a class="me-3 btn btn-success rounded-5" href="">Accepted</a>
                             <a class="btn btn-danger rounded-5" href="">Reject</a>
-                        </div>
+                        </div> -->
                     </td>
                             <td class="text-warning">In progress</td>
                             <td scope="row" class="text-center">
-                              <a href="{{ route('pengajuan.edit', $item->id) }}"
+                              <a href="{{ route('user-pengajuan.edit', $item->id) }}"
                                   class="btn btn-warning mb-2"><i
                                       class=" fa fa-solid fa-pen"
                                       style="color:white;"></i></a>
-                              <form action="{{route('pengajuan.destroy' , $item->id)}}"
+                              <form action="{{route('user-pengajuan.destroy' , $item->id)}}"
                                   method="POST">
                                   @csrf
                                   @method('DELETE')

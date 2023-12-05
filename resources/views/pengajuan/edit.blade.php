@@ -7,7 +7,7 @@
         <h2>Pengajuan Barang</h2>
         <h5>Silahkan Isi Form Dibawah Ini Untuk Pengajuan !</h5>
     </div>
-    <form action="{{route('pengajuan.update',$data->id)}}" method="POST" enctype="multipart/form-data" >
+    <form action="{{route('user-pengajuan.update',$data->id)}}" method="POST" enctype="multipart/form-data" >
         @method('PUT')
         @csrf
           <div class="card-body container">

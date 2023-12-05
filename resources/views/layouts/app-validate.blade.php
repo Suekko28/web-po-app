@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Mustika Arga Kencansssssss</title>
+    <title>Mustika Arga Kencana</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -49,7 +49,7 @@
                 <a href="{{ route('user.service') }}" class="nav-item nav-link">Service</a>
                 <a href="{{ route('user.about') }}" class="nav-item nav-link">About</a>
                 <a href="{{ route('user.contact') }}" class="nav-item nav-link">Contact</a>
-                <a href="{{route('pengajuan.index') }}" class="nav-item nav-link">Pengajuan</a>
+                <a href="{{route('user-pengajuan.index') }}" class="nav-item nav-link">Pengajuan</a>
             </div>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown me-2">

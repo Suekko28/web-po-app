@@ -25,12 +25,12 @@
                                 </thead>
                                 <tbody>
                                     <?php $i = 1; ?>
-                                    {{-- @foreach ($data as $item) --}}
+                                    @foreach ($data as $item)
                                     <tr>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
+                                        <td>{{ $i }}</td>
+                                        <td>{{ $item->perlatan }}</td>
+                                        <td>{{ $item->qty }}</td>
+                                        <td>{{ $item->unit }}</td>
                                         <td>
                                             <a href="" class="btn btn-success">Buat Penawaran</a>
                                         </td>
@@ -46,8 +46,7 @@
                                         </td>
                                     </tr>
                                     <?php $i++; ?>
-
-                                    {{-- @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
