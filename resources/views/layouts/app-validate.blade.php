@@ -50,6 +50,8 @@
                 <a href="{{ route('user.about') }}" class="nav-item nav-link">About</a>
                 <a href="{{ route('user.contact') }}" class="nav-item nav-link">Contact</a>
                 <a href="{{route('user-pengajuan.index') }}" class="nav-item nav-link">Pengajuan</a>
+                <a href="{{route('user-penawaran.index') }}" class="nav-item nav-link">Penawaran</a>
+                <a href="{{route('user-po.index') }}" class="nav-item nav-link">Po</a>
             </div>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown me-2">

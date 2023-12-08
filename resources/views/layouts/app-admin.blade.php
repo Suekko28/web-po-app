@@ -257,6 +257,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin-peralatan.index') }}">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Data Riksa / Alat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin-pengajuan.index') }}">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Pengajuan</span>

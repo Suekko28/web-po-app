@@ -2,16 +2,16 @@
 
 @section('content')
     <div class="container mt-5">
-        <a href="{{ route('user-pengajuan.create') }}" class="btn btn-primary mb-3"> Buat Pengajuan</a>
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-bordered text-center">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">Id Pengajuan</th>
                         <th scope="col">Total Penawaran</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Tgl Pengajuan</th>
+                        <th scope="col">Doc. Penawaran</th>
+                        <th scope="col">Doc. PO</th>
+                        <th scope="col">Status PO</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -23,35 +23,42 @@
                             <th scope="row">{{ $item->id }}</th>
                             <td>
                                 @if ($item->total_penawaran != 0)
-                                    Rp. {{ $item->total_penawaran }}, <a href="{{route('user-penawaran.index')}}">Cek Tawaran</a>
+                                    Rp. {{ $item->total_penawaran }}
                                 @else
                                     <div class="text-dark">belum ada tawaran</div>
                                 @endif
                             </td>
-                            <td class="text-warning">
-                                @if ($item->status == 201)
-                                    <div class="text-warning">menunggu penawaran</div>
-                                @elseif ($item->status == 202)
-                                    <div class="text-info">menunggu konfirmasimu</div>
-                                @elseif ($item->status == 203)
-                                    <div class="text-danger">ditolak</div>
-                                @elseif ($item->status == 200)
-                                    <div class="text-success">diterima</div>
-                                @endif
+                            <td>
+                               <a href="/dokumen/surat-penawaran?pengajuanId={{$item->id}}" target="_blank" class="btn btn-outline-primary">cek disini</a>
                             </td>
                             <td>
-                                <p>{{$item->created_at}}</p>
+                               <a href="/dokumen/surat-po?pengajuanId={{$item->id}}" target="_blank" class="btn btn-outline-primary">cek disini</a>
+                            </td>
+                            <td>
+                                @if ($item->status_po == 202)
+                                    <div class="text-info">menunggu konfirmasimu</div>
+                                @elseif ($item->status_po == 203)
+                                    <div class="text-danger">ditolak</div>
+                                @elseif ($item->status_po == 200)
+                                    <div class="text-success">[diterima] <br> jadwal pemeriksaan akan tersedia dikolom aksi</div>
+                                @endif
                             </td>
                             <td scope="row" class="text-center">
-                                @if ($item->status != 200)
-                                    <a href="{{ route('user-pengajuan.edit', $item->id) }}" class="btn btn-warning mb-2"><i
-                                            class=" fa fa-solid fa-pen" style="color:white;"></i></a>
+                                @if ($item->status_po == 202)
+                                    <a href="/approval-po?pengajuanId={{$item->id}}&status_po=approve" class="btn btn-success">Terima</a>
+                                    <a href="/approval-po?pengajuanId={{$item->id}}&status_po=decline" class="btn btn-danger">Tolak</a>
+                                @elseif ($item->status_po == 203)
+                                    <p class="text-warning">Tunggu PO selanjutnya</p>
+                                @elseif ($item->status_po == 200)
+                                    <div class="text-info">
+                                        @if (is_null($item->tanggal_penjadwalan))
+                                            Belum Dijadwalkan
+                                        @else
+                                        Tanggal Pemeriksaan : <br>
+                                        {{$item->tanggal_penjadwalan}}
+                                        @endif
+                                    </div>
                                 @endif
-                                <form action="{{ route('user-pengajuan.destroy', $item->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger mb-2"><i class="fa fa-solid fa-trash"></i></button>
-                                </form>
                             </td>
                         </tr>
                         <?php $i++; ?>
