@@ -10,8 +10,15 @@ class DashboardController extends Controller
     public function dashboard(Request $request){
         $date=date('Y-m-d');
         $created_today=pengajuan::whereDate('created_at','=',$date)->get()->count();
-        $total_booking=pengajuan::all()->count();
-        return view('admin.dashboard')->with('created_today',$created_today)->with('total_booking',$total_booking);
+        $penawaranDiterima=pengajuan::where('status', 200)->count();
+        $penawaranDitolak=pengajuan::where('status', 203)->count();
+        $totalPenawaran = pengajuan::all()->count();
+        return view('admin.dashboard', [
+            'pengajuanHariIni' => $created_today,
+            'penawaranDiterima' => $penawaranDiterima,
+            'penawaranDitolak' => $penawaranDitolak,
+            'totalPenawaran' => $totalPenawaran
+        ]);
     }
 
     public function index(){
