@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PengajuanFormRequest;
+use App\Models\DetailAlat;
 use App\Models\pengajuan;
+use App\Models\Peralatan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
 
@@ -12,6 +15,14 @@ use Illuminate\Support\Facades\Date;
 
 class PengajuanUserController extends Controller
 {
+    public function getPengajuanId(){
+        $dataToday = pengajuan::whereDate('created_at', Carbon::today())->get();
+        $last = count($dataToday) + 1;
+        $id = date('Ymd') . $last;
+
+        return $id;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -19,7 +30,7 @@ class PengajuanUserController extends Controller
     {
         $user_id=auth()->user()->id;
         $data=pengajuan::where('user_id',$user_id)->get();
-    
+
         return view('pengajuan.index',[
             'data'=>$data,
         ]);
@@ -30,7 +41,10 @@ class PengajuanUserController extends Controller
      */
     public function create()
     {
-        return view('pengajuan.create');
+        $peralatan = Peralatan::all();
+        return view('pengajuan.create', [
+            'peralatan' => $peralatan
+        ]);
     }
 
     /**
@@ -38,15 +52,28 @@ class PengajuanUserController extends Controller
      */
     public function store(Request $request)
     {
-        $data=$request->all();
-        $created_at = date("Y-m-d H:i:s", strtotime(Date::now()));
-        $data['user_id']=auth()->user()->id;
-        $data['status']=1;
-        $data['created_at']=$created_at;
-        $data['updated_at']=$created_at;
-        
-        $pengajuan=pengajuan::create($data);
-        return redirect()->route('user-pengajuan.index')->with('success','sukses menambahkan data');
+        $pengajuanId = $this->getPengajuanId();
+
+        $validPengajuan = [
+            'id'      => $pengajuanId,
+            'user_id' => $request->user_id,
+            'status' => 201
+        ];
+
+        if($validPengajuan){
+            for($i=0; $i < count($request->peralatan_id); $i++){
+                $validDetailAlat[$i] = [
+                    'pengajuan_id' => $pengajuanId,
+                    'peralatan_id' => $request->peralatan_id[$i],
+                    'qty'          => $request->qty[$i],
+                    'created_at'   => date("Y-m-d H:i:s", strtotime(Date::now()))
+                ];
+            }
+
+            pengajuan::create($validPengajuan);
+            DetailAlat::insert($validDetailAlat);
+        }
+        return redirect()->route('user-pengajuan.index')->with('success','sukses melakukan pengajuan');
     }
 
     /**
@@ -62,8 +89,12 @@ class PengajuanUserController extends Controller
      */
     public function edit(string $id)
     {
-        $data=pengajuan::where('id',$id)->first();
-        return view('pengajuan.edit')->with('data',$data);
+        $detailAlat = DetailAlat::where('pengajuan_id',$id)->get();
+        $peralatan = Peralatan::all();
+        return view('pengajuan.edit', [
+            'detailAlat' => $detailAlat,
+            'peralatan' => $peralatan
+        ]);
     }
 
     /**
@@ -71,12 +102,17 @@ class PengajuanUserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $created_at = date("Y-m-d H:i:s", strtotime(Date::now()));
-        $old_data=pengajuan::where('id',$id)->first();
-        $data=$request->all();
-        $data['updated_at']=$created_at;
-        $old_data->update($data);
-        return redirect()->route('user-pengajuan.index')->with('success','sukses menambahkan data');
+        for($i=0; $i < count($request->peralatan_id); $i++){
+            $validDetailAlat = [
+                'peralatan_id' => $request->peralatan_id[$i],
+                'qty'          => $request->qty[$i],
+                'updated_at'   => date("Y-m-d H:i:s", strtotime(Date::now()))
+            ];
+            DetailAlat::where('id', $request->detail_alat_id[$i])->update($validDetailAlat);
+        }
+
+
+        return redirect()->route('user-pengajuan.index')->with('success','sukses melakukan pengajuan');
 
     }
 
@@ -85,7 +121,7 @@ class PengajuanUserController extends Controller
      */
     public function destroy(Request $request,string $id)
     {
-       
+
         $data=pengajuan::where('id',$id);
         if(auth()->user()->id==$data->first()->user_id){
             $data->delete();

@@ -14,10 +14,10 @@
                                         <th>No</th>
                                         <th>Id Pengajuan</th>
                                         <th>Jumlah Alat</th>
-                                        <th>Nilai Penawaran Terbaru</th>
-                                        <th>Penawaran</th>
-                                        <th>Dokumen</th>
-                                        <th>Status</th>
+                                        <th>Nilai Penawaran</th>
+                                        <th>Dokumen Pengajuan</th>
+                                        <th>Dokumen Penawaran</th>
+                                        <th>Status PO</th>
                                         <th>Aksi</th>
 
                                     </tr>
@@ -30,35 +30,25 @@
                                         <td>{{ $item->id }}</td>
                                         <td>{{ count($item->detail_alat) }}</td>
                                         <td>Rp. {{ $item->total_penawaran }}</td>
-                                        <td>
-                                            @if ($item->status == 201)
-                                                <a href="/admin-pengajuan/create?id={{ $item->id}}" class="btn btn-success">Buat Penawaran</a>
-                                            @elseif ($item->status == 202)
-                                                <div class="text-info">menunggu konfirmasi</div>
-                                            @elseif ($item->status == 203)
-                                                <a href="/admin-pengajuan/{{ $item->id}}/edit" class="btn btn-success">Buat Penawaran Baru</a>
-                                            @elseif ($item->status == 200)
-                                                <div class="text-success">penawaran diterima</div>
-                                            @endif
-                                        </td>
                                         <td><a href="/dokumen/surat-pengajuan?pengajuanId={{$item->id}}" target="_blank" class="btn btn-outline-info">Cek disini</a></td>
+                                        <td><a href="/dokumen/surat-penawaran?pengajuanId={{$item->id}}" target="_blank" class="btn btn-outline-info">Cek disini</a></td>
                                         <td>
-                                            @if ($item->status == 201)
-                                                <div class="text-primary">menunggu penawaran</div>
-                                            @elseif ($item->status == 202)
+                                            @if ($item->status_po == 201)
+                                                <div class="text-primary">menunggu generate po</div>
+                                            @elseif ($item->status_po == 202)
                                                 <div class="text-info">menunggu konfirmasi</div>
-                                            @elseif ($item->status == 203)
+                                            @elseif ($item->status_po == 203)
                                                 <div class="text-danger">ditolak</div>
-                                            @elseif ($item->status == 200)
+                                            @elseif ($item->status_po == 200)
                                                 <div class="text-success">diterima</div>
                                             @endif
                                         </td>
                                         <td scope="row" class="text-center">
-                                            <form action="{{ route('admin-pengajuan.destroy', $item->id) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="btn btn-danger mb-2"><i class="fa fa-solid fa-trash"></i></button>
-                                            </form>
+                                            @if ($item->status_po == 201)
+                                                <a href="/admin-po/generate-po?pengajuanId={{$item->id}}" class="btn btn-primary">Generate PO</a>
+                                            @else
+                                                <a href="/dokumen/surat-po?pengajuanId={{$item->id}}" target="_blank" class="btn btn-primary">Lihat PO</a>
+                                            @endif
                                         </td>
                                     </tr>
                                     <?php $i++; ?>

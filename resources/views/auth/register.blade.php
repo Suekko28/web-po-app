@@ -40,6 +40,9 @@
                   <input type="email" name="email" class="form-control form-control-lg" id="Email" placeholder="Email" value="{{ Session::get('email') }}">
                 </div>
                 <div class="form-group">
+                  <textarea name="address" id="address" cols="100%" rows="3" class="form-control" placeholder="Address">{{ Session::get('address') }}</textarea>
+                </div>
+                <div class="form-group">
                   <input type="password" name="password" class="form-control form-control-lg" id="Password" placeholder="Password" value="{{ Session::get('password') }}">
                 </div>
                 <div class="mb-4">

@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="container mt-5">
-        <a href="{{ route('user-pengajuan.create') }}" class="btn btn-primary mb-3"> Buat Pengajuan</a>
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead>
@@ -10,8 +9,9 @@
                         <th scope="col">No</th>
                         <th scope="col">Id Pengajuan</th>
                         <th scope="col">Total Penawaran</th>
+                        <th scope="col">Tgl Penawaran</th>
+                        <th scope="col">Dokumen</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Tgl Pengajuan</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -23,15 +23,19 @@
                             <th scope="row">{{ $item->id }}</th>
                             <td>
                                 @if ($item->total_penawaran != 0)
-                                    Rp. {{ $item->total_penawaran }}, <a href="{{route('user-penawaran.index')}}">Cek Tawaran</a>
+                                    Rp. {{ $item->total_penawaran }}
                                 @else
                                     <div class="text-dark">belum ada tawaran</div>
                                 @endif
                             </td>
-                            <td class="text-warning">
-                                @if ($item->status == 201)
-                                    <div class="text-warning">menunggu penawaran</div>
-                                @elseif ($item->status == 202)
+                            <td>
+                                <p>{{$item->tanggal_penawaran}}</p>
+                            </td>
+                            <td>
+                               <a href="/dokumen/surat-penawaran?pengajuanId={{$item->id}}" target="_blank" class="btn btn-outline-primary">cek disini</a>
+                            </td>
+                            <td>
+                                @if ($item->status == 202)
                                     <div class="text-info">menunggu konfirmasimu</div>
                                 @elseif ($item->status == 203)
                                     <div class="text-danger">ditolak</div>
@@ -39,19 +43,15 @@
                                     <div class="text-success">diterima</div>
                                 @endif
                             </td>
-                            <td>
-                                <p>{{$item->created_at}}</p>
-                            </td>
                             <td scope="row" class="text-center">
-                                @if ($item->status != 200)
-                                    <a href="{{ route('user-pengajuan.edit', $item->id) }}" class="btn btn-warning mb-2"><i
-                                            class=" fa fa-solid fa-pen" style="color:white;"></i></a>
+                                @if ($item->status == 202)
+                                    <a href="/approval-penawaran?pengajuanId={{$item->id}}&status=approve" class="btn btn-success">Terima</a>
+                                    <a href="/approval-penawaran?pengajuanId={{$item->id}}&status=decline" class="btn btn-danger">Tolak</a>
+                                @elseif ($item->status == 203)
+                                    <p class="text-warning">Tunggu penawaran selanjutnya</p>
+                                @elseif ($item->status == 200)
+                                    <p class="text-success">Thank you for order!!</p>
                                 @endif
-                                <form action="{{ route('user-pengajuan.destroy', $item->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger mb-2"><i class="fa fa-solid fa-trash"></i></button>
-                                </form>
                             </td>
                         </tr>
                         <?php $i++; ?>

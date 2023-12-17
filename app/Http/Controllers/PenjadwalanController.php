@@ -12,7 +12,8 @@ class PenjadwalanController extends Controller
      */
     public function index()
     {
-        return view('admin-penjadwalan');
+        $data = pengajuan::orderby("id", "desc")->where('status_po', 200)->with('detail_alat')->paginate(10);
+        return view("admin-penjadwalan.index")->with('data',$data);
     }
 
     /**
@@ -28,7 +29,12 @@ class PenjadwalanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        pengajuan::where('id', $request->pengajuan_id)->update([
+            'tanggal_penjadwalan' => $request->tanggal_penjadwalan,
+            'updated_at' => date("Y-m-d H:i:s"),
+        ]);
+
+        return redirect()->back()->with('success', 'Penjadwalan berhasil diupdate !');
     }
 
     /**

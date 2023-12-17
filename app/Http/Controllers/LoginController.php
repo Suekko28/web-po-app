@@ -12,29 +12,29 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function showLoginForm(Request $request){
+    public function showLoginForm(Request $request)
+    {
         return view('auth.login');
     }
 
-    public function login(Request $request){
-        
-        $creds=$request->only('email','password');
-        if(auth()->attempt($creds)){
-            session(["token" => auth()->user()->createToken($request->email)->plainTextToken]);
-            if(auth()->user()->role==2){
-            return redirect()->route('user.home');
-            } 
-            else{
-            return redirect()->route('admin');
-            }
+    public function login(Request $request)
+    {
 
-        }
-        else{
+        $creds = $request->only('email', 'password');
+        if (auth()->attempt($creds)) {
+            session(["token" => auth()->user()->createToken($request->email)->plainTextToken]);
+            if (auth()->user()->role == 2) {
+                return redirect()->route('user.home');
+            } else {
+                return redirect()->route('admin');
+            }
+        } else {
             return redirect()->back()->withErrors('Invalid Credentials');
         }
     }
 
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
         auth()->user()->tokens()->delete();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
